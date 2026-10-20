@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+from utils.notifier import evaluate_and_notify
 
 DB_NAME = "report_monitor.db"
 
@@ -43,3 +44,21 @@ def execute_retry(rr_id):
     """, (rr_id,))
     conn.commit()
     conn.close()
+
+def init_evaluate_and_notify():
+    print("Evaluating existing log entries and insert into notification log...")
+    conn = sqlite3.connect(DB_NAME)
+    query = """
+        SELECT RR_ID from REPORT_RUN_LOG
+        """
+    df_rid = pd.read_sql(query, conn)
+    print(df_rid)
+    conn.close()
+
+    for rr in df_rid['RR_ID']:
+        evaluate_and_notify(rr)
+
+
+
+if __name__ == "__main__":
+    init_evaluate_and_notify()

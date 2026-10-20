@@ -30,6 +30,7 @@ def seed_database():
     with open("schema.sql", "r") as f:
         cursor.executescript(f.read())
 
+
     # 3. Load JSON Data
     with open(JSON_FILE, "r") as f:
         data = json.load(f)
@@ -84,11 +85,17 @@ def seed_database():
             rr_id, r_id, s_id, sched_at, job["status"], 
             job["attempt_number"], job["duration_seconds"], 
             job["row_count"], failure_cat, is_auto_retry
-        ))
+        )
+
+        )
+
+
 
     conn.commit()
     conn.close()
     print(f"Database '{DB_NAME}' successfully created and seeded from '{JSON_FILE}'!")
+
+
 
 if __name__ == "__main__":
     seed_database()
