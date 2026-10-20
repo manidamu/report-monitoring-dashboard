@@ -20,10 +20,11 @@ Furthermore, log statuses are inconsistent (`failed`, `timed-out`, `error`), and
 ---
 
 ## 2. System Architecture Overview
-[ Job Runner Logs ] 
+```text
+ [ Job Runner Logs ] 
          │
          ▼
-[ JSON / API Ingest ] 
+( JSON / API Ingest ) 
          │
          ▼
 ┌────────────────────────────────────────────────────────┐
@@ -39,7 +40,9 @@ Furthermore, log statuses are inconsistent (`failed`, `timed-out`, `error`), and
   (Evaluates safe-     (Applies Tier/       (Live Triage &
    to-retry & re-run)   Criticality rules)   Audit Trail)
 
----
+```
+
+
 
 ## 3. Database Schema Design
 
