@@ -3,7 +3,8 @@
 **Author:** Mani Damodaran as an FDE  
 **Status:** MVP Ready  
 **Target Deployment:** Streamlit Community Cloud + SQLite  
-https://report-monitoring-dashboard-8s3rbnqsi48byxkyckokoh.streamlit.app/
+The application is deployed on Streamlit Community Cloud , use the below url to access the application
+[Report Run Monitor & Auto-Triage Dashboard](https://report-monitoring-dashboard-8s3rbnqsi48byxkyckokoh.streamlit.app/)
 ---
 
 ## 1. Executive Summary & Problem Statement
